@@ -32,6 +32,6 @@ public class Movement : MonoBehaviour
     {
         Quaternion headYaw = Quaternion.Euler(0, rig.Camera.transform.eulerAngles.y, 0);
         Vector3 direction = headYaw * new Vector3(inputAxis.x, 0, inputAxis.y);
-        character.Move(direction * speed * Time.deltaTime);
+        transform.position = transform.position + (direction * speed * Time.deltaTime);
     }
 }
